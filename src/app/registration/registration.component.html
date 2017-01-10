@@ -1,0 +1,45 @@
+<section class="sign-up content-part"><!--content-part begin -->
+  <div class="content has-header padding main-container container">
+    <div class="row content-row" >
+      <form>
+        <h2>Registration Form</h2>
+        <div class="form-group">
+            <label for="firstName" class="col-sm-3 control-label">Full Name</label>
+            <div class="col-sm-9">
+              <input type="text"  class="form-control" id="name" required [(ngModel)]="student.name" name="name" autofocus>
+                <span class="help-block">Last Name, First Name, eg.: Smith, Harry</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-3 control-label">Email</label>
+            <div class="col-sm-9">
+                <input type="email" id="email" required [(ngModel)]="student.email" name="email" placeholder="Email" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="birthDate" class="col-sm-3 control-label">Date of Birth</label>
+            <div class="col-sm-9">
+                <input type="date" id="birthDate" required [(ngModel)]="student.dob" name="dob" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="country" class="col-sm-3 control-label">City</label>
+            <div class="col-sm-9">
+                <select id="country" required [(ngModel)]="student.city" name="city" class="form-control">
+                    <option>Rajendra Nagar</option>
+                    <option>Pithampur</option>
+                    <option>Rajwada</option>
+                    <option>Dhar Road</option>
+                    <option>RNT Marg</option>
+                </select>
+            </div>
+        </div> <!-- /.form-group -->   
+        <div class="form-group">
+            <div class="col-sm-9 col-sm-offset-3">
+                <button routerLink="/" type="submit" (click)="submitRegistration()" class="btn btn-primary btn-block">Register</button>
+            </div>
+        </div>
+      </form> <!-- /form -->
+    </div> 
+  </div>
+</section><!--content-part end -->

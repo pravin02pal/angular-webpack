@@ -1,0 +1,27 @@
+<button type="button" routerLink="signup" class="btn btn-primary"><span class="glyphicon glyphicon-user"></span> Add Student</button>
+<section class="content-part"><!--content-part begin -->
+  <div class="content has-header padding main-container container">
+    <div class="row content-row" >
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date Of birth</th>
+            <th>City</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of students">
+            <td>{{ student.name }}</td>
+            <td>{{ student.email }}</td>
+            <td>{{ student.dob }}</td>
+            <td>{{ student.city }}</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div> 
+  </div>
+</section><!--content-part end -->
