@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'home',
@@ -8,28 +9,12 @@ import { Router } from '@angular/router';
 
 export class HomeComponent implements OnInit {
   students: any;
-  constructor(private router: Router) {}
+  constructor(private router: Router, private af: AngularFire) {}
 
   ngOnInit() {
-    this.students = [
-	  {
-	    "name": "Madrid",
-	    "email": "madrid@yopmail.com",
-	    "dob": "01/02/2016",
-	    "city": "indore"
-	  },
-	  {
-	    "name": "Hari",
-	    "email": "hari@yopmail.com",
-	    "dob": "11/05/2016",
-	    "city": "pithampur"
-	  },
-	  {
-	    "name": "Jhon",
-	    "email": "jhon@yopmail.com",
-	    "dob": "25/27/2016",
-	    "city": "dhar"
-	  }  
-	]
+    const data = this.af.database.list('students');
+    data.subscribe(
+      val => this.students = val
+    )
   }
 }
